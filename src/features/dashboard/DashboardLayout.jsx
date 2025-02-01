@@ -6,6 +6,7 @@ import SalesChart from "./SalesChart";
 import DurationChart from "./DurationChart";
 import { useStatsSpecialists } from "./useStatsSpecialists";
 import TodayActivity from "./TodayActivity";
+import BookingsChart from "./BookingsChart";
 
 const StyledDashboardLayout = styled.div`
     display: grid;
@@ -15,19 +16,18 @@ const StyledDashboardLayout = styled.div`
 `;
 
 function DashboardLayout() {
-    const { bookings, isLoading: isLoading1 } = useRecentBookings();
+    const { bookings, isLoading: isLoading1, numDays } = useRecentBookings();
     const { specialists, isLoading: isLoading2 } = useStatsSpecialists();
 
     if (isLoading1 || isLoading2) return <Spinner />;
-    // if (isLoading1 || isLoading2 || isLoading3) return <Spinner />;
 
     return (
         <StyledDashboardLayout>
             <Stats bookings={bookings} specialists={specialists} />
             <TodayActivity />
             {/*
-            <DurationChart confirmedStays={confirmedStays} />
-            <SalesChart bookings={bookings} numDays={numDays} /> */}
+            <DurationChart confirmedStays={confirmedStays} /> */}
+            <BookingsChart bookings={bookings} numDays={numDays} />
         </StyledDashboardLayout>
     );
 }
