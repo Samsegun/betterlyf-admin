@@ -109,7 +109,7 @@ function prepareData(startData, bookings) {
     return data;
 }
 
-function NewDurationChart({ bookings }) {
+function SummaryChart({ bookings }) {
     const { isDarkMode } = useDarkMode();
     const startData = isDarkMode ? startDataDark : startDataLight;
     const data = prepareData(startData, bookings);
@@ -151,4 +151,4 @@ function NewDurationChart({ bookings }) {
     );
 }
 
-export default NewDurationChart;
+export default SummaryChart;
