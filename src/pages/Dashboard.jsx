@@ -1,19 +1,32 @@
 import DashboardLayout from "../features/dashboard/DashboardLayout";
 import DashboardFilter from "../features/dashboard/DashboardFilter";
 import Heading from "../ui/Heading";
-import Row from "../ui/Row";
+import styled from "styled-components";
+import { breakpoints } from "../styles/breakpoints";
+
+const StyledPageHeading = styled.section`
+    display: flex;
+
+    flex-direction: column;
+    gap: 1.6rem;
+
+    ${breakpoints.laptop} {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+`;
 
 function Dashboard() {
-  return (
-    <>
-      <Row type="horizontal">
-        <Heading as="h1">Dashboard</Heading>
-        <DashboardFilter />
-      </Row>
+    return (
+        <>
+            <StyledPageHeading>
+                <Heading as='h1'>Dashboard</Heading>
+                <DashboardFilter />
+            </StyledPageHeading>
 
-      <DashboardLayout />
-    </>
-  );
+            <DashboardLayout />
+        </>
+    );
 }
 
 export default Dashboard;

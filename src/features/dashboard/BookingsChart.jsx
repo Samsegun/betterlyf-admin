@@ -12,8 +12,10 @@ import {
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
 import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
+// import { breakpoints } from "../../styles/breakpoints";
 
 const StyledSalesChart = styled(DashboardBox)`
+    /* grid-area: bookings; */
     grid-column: 1 / -1;
 
     /* Hack to change grid line colors */

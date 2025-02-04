@@ -6,6 +6,7 @@ import { useStatsSpecialists } from "./useStatsSpecialists";
 import TodayActivity from "./TodayActivity";
 import BookingsChart from "./BookingsChart";
 import SummaryChart from "./SummaryChart";
+// import { breakpoints } from "../../styles/breakpoints";
 
 const StyledDashboardLayout = styled.div`
     display: grid;
@@ -13,6 +14,23 @@ const StyledDashboardLayout = styled.div`
     grid-template-rows: auto 34rem auto;
     gap: 2.4rem;
 `;
+
+// const StyledDashboardLayout = styled.div`
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-rows: auto 34rem auto auto;
+//     gap: 2.4rem;
+//     grid-template-areas:
+//         "stats stats"
+//         "today"
+//         "summary"
+//         "bookings bookings";
+
+//     ${breakpoints.laptop} {
+//         grid-template-columns: 1fr 1fr 1fr 1fr;
+//         grid-template-rows: auto 34rem auto;
+//     }
+// `;
 
 function DashboardLayout() {
     const { bookings, isLoading: isLoading1, numDays } = useRecentBookings();

@@ -1,8 +1,14 @@
+// import styled from "styled-components";
 import { HiOutlineBriefcase, HiOutlineCalendarDays } from "react-icons/hi2";
 import { FaUserMd } from "react-icons/fa";
 import { GiConfirmed } from "react-icons/gi";
 import Stat from "./Stat";
+// import { breakpoints } from "../../styles/breakpoints";
 // import { formatCurrency } from "../../utils/helpers";
+
+// const StyledStats = styled.div`
+//     grid-area: stats;
+// `;
 
 function Stats({ bookings, specialists }) {
     // 1.

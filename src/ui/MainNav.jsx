@@ -4,10 +4,15 @@ import { useAdmin } from "../features/authentication/useAdmin";
 import Spinner from "./Spinner";
 import AdminNav from "./AdminNav";
 import RegularNav from "./RegularNav";
+import { breakpoints } from "../styles/breakpoints";
 
 export const NavList = styled.ul`
-    display: flex;
-    flex-direction: column;
+    display: none;
+
+    ${breakpoints.laptop} {
+        display: flex;
+        flex-direction: column;
+    }
     gap: 0.8rem;
 `;
 
@@ -15,6 +20,8 @@ export const StyledNavLink = styled(NavLink)`
     &:link,
     &:visited {
         display: flex;
+
+        justify-content: flex-start;
         align-items: center;
         gap: 1.2rem;
 

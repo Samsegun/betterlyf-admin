@@ -6,6 +6,7 @@ import Row from "../../ui/Row";
 import { useTodayActivity } from "./useTodayActivity";
 import Spinner from "../../ui/Spinner";
 import TodayItem from "./TodayItem";
+// import { breakpoints } from "../../styles/breakpoints";
 
 const StyledToday = styled.div`
     /* Box */
@@ -17,6 +18,7 @@ const StyledToday = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
+    /* grid-area: today; */
     grid-column: 1 / span 2;
     padding-top: 2.4rem;
 `;

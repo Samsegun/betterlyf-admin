@@ -4,7 +4,8 @@ import styled from "styled-components";
 const StyledLogo = styled.div`
     text-align: center;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    flex-direction: row;
     align-items: center;
     gap: 1rem;
     font-weight: 600;
