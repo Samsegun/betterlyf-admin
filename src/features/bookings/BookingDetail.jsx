@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import BookingDataBox from "./BookingDataBox";
-import Row from "../../ui/Row";
 import Heading from "../../ui/Heading";
 import Tag from "../../ui/Tag";
 import ButtonGroup from "../../ui/ButtonGroup";
@@ -18,6 +17,7 @@ import { useDeleteBooking } from "./useDeleteBooking";
 import Empty from "../../ui/Empty";
 import { useBookingStatus } from "./useBookingStatus";
 import ConfirmStatus from "../../ui/ConfirmStatus";
+import { StyledPageHeading } from "../../pages/Dashboard";
 
 const HeadingGroup = styled.div`
     display: flex;
@@ -48,7 +48,7 @@ function BookingDetail() {
 
     return (
         <>
-            <Row type='horizontal'>
+            <StyledPageHeading>
                 <HeadingGroup>
                     <Heading as='h1'>Booking #{bookingId}</Heading>
                     <Tag type={statusToTagName[status]}>
@@ -56,7 +56,7 @@ function BookingDetail() {
                     </Tag>
                 </HeadingGroup>
                 <ButtonText onClick={moveBack}>&larr; Back</ButtonText>
-            </Row>
+            </StyledPageHeading>
 
             <BookingDataBox booking={booking} />
 

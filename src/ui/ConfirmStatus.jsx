@@ -1,12 +1,21 @@
 import styled from "styled-components";
 import Button from "./Button";
 import Heading from "./Heading";
+import { breakpoints } from "../styles/breakpoints";
 
 const StyledConfirmStatus = styled.div`
     width: 40rem;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    width: 280px;
+
+    ${breakpoints.tablet} {
+        width: 400px;
+    }
+    ${breakpoints.laptop} {
+        width: auto;
+    }
 
     & p {
         color: var(--color-grey-500);

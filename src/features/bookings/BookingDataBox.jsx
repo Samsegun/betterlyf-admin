@@ -15,6 +15,7 @@ import {
     formatDistanceFromNow,
     parsedTime,
 } from "../../utils/helpers";
+import { breakpoints } from "../../styles/breakpoints";
 
 const StyledBookingDataBox = styled.section`
     /* Box */
@@ -22,7 +23,11 @@ const StyledBookingDataBox = styled.section`
     border: 1px solid var(--color-grey-100);
     border-radius: var(--border-radius-md);
 
-    overflow: hidden;
+    min-width: 600px;
+
+    ${breakpoints.laptop} {
+        overflow: hidden;
+    }
 `;
 
 const Header = styled.header`

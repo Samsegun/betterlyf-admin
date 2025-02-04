@@ -4,10 +4,11 @@ import Heading from "../ui/Heading";
 import styled from "styled-components";
 import { breakpoints } from "../styles/breakpoints";
 
-const StyledPageHeading = styled.section`
+export const StyledPageHeading = styled.section`
     display: flex;
 
     flex-direction: column;
+    align-items: flex-start;
     gap: 1.6rem;
 
     ${breakpoints.laptop} {

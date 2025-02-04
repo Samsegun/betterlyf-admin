@@ -1,9 +1,17 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { breakpoints } from "../styles/breakpoints";
 
 const TableOperations = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
+    display: flex;
+
+    flex-direction: column;
+    align-items: start;
+    gap: 1.6rem;
+
+    ${breakpoints.laptop} {
+        flex-direction: row;
+        align-items: center;
+    }
 `;
 
 export default TableOperations;
