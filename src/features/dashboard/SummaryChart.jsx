@@ -99,6 +99,7 @@ function prepareData(startData, bookings) {
         .reduce((arr, cur) => {
             const status = cur.status;
             if (status === "pending") return incArrayValue(arr, "Pending");
+
             if (status === "confirmed") return incArrayValue(arr, "Confirmed");
             if (status === "cancelled") return incArrayValue(arr, "Cancelled");
             if (status === "completed") return incArrayValue(arr, "Completed");
