@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-
 # Betterlyf Admin Panel -
 
-This is the admin app for the [Betterlyf Doctor Booking App](https://www.betterlyf.vercel.app/). The repo can be found here [Betterlyf Github repo](https://github.com/Samsegun/betterlyf-admin)
+This is the admin app for the [Betterlyf Doctor Booking App](https://www.betterlyf.vercel.app/). The repo can be found here [Betterlyf Github repo](https://github.com/Samsegun/betterlyf)
 
 ## Table of contents
 
@@ -18,7 +16,7 @@ This is the admin app for the [Betterlyf Doctor Booking App](https://www.betterl
 
 ## Overview
 
-The Betterlyf Admin Panel is a React-based dashboard where admins manage the platform. It connects to Supabase for database operations and authentication.
+The Betterlyf Admin Panel is a React-based dashboard where admins manage the platform. It connects to Supabase for database operations and authentication. Users can book appointments with specialists through a separate [Nextjs-based website](https://github.com/Samsegun/betterlyf)
 
 ### Screenshot
 
@@ -58,4 +56,5 @@ The Betterlyf Admin Panel is a React-based dashboard where admins manage the pla
 ## Author
 
 -   Github - [Samuel Oyebade](https://github.com/Samsegun/)
+-   Gmail - [Oyebade Sam](oyebadesegunsam@gmail.com)
 -   X (Twitter) - [@samsegun10](https://www.twitter.com/samsegun10)
