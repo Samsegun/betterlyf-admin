@@ -24,9 +24,7 @@ The Betterlyf Admin Panel is a React-based dashboard where admins manage the pla
 
 ### Links
 
-<!--
--   Solution URL: [GitHub](https://github.com/Samsegun/Entertainment-web-app)
--   Live Site URL: [Netlify](https://samsegun-entertainment-app.netlify.app/) -->
+-   Live Site URL: [Betterlyf](https://betterlyf-admin.vercel.app/)
 
 ## Features
 
@@ -56,5 +54,5 @@ The Betterlyf Admin Panel is a React-based dashboard where admins manage the pla
 ## Author
 
 -   Github - [Samuel Oyebade](https://github.com/Samsegun/)
--   Gmail - [Oyebade Sam](oyebadesegunsam@gmail.com)
+-   Gmail - [Oyebade Sam](mailto:oyebadesegunsam@gmail.com)
 -   X (Twitter) - [@samsegun10](https://www.twitter.com/samsegun10)
