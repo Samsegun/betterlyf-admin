@@ -1,39 +1,28 @@
 <<<<<<< HEAD
 
-# Frontend Mentor - Entertainment web app solution
+# Betterlyf Admin Panel -
 
-<!-- This is a solution to the [Entertainment web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X). Frontend Mentor challenges help you improve your coding skills by building realistic project. -->
+This is the admin app for the [Betterlyf Doctor Booking App](https://www.betterlyf.vercel.app/). The repo can be found here [Betterlyf Github repo](https://github.com/Samsegun/betterlyf-admin)
 
 ## Table of contents
 
 -   [Overview](#overview)
-    -   [The challenge](#the-challenge)
     -   [Screenshot](#screenshot)
     -   [Links](#links)
--   [My process](#my-process)
+-   [Features](#features)
+    -   [Admins](#admins)
     -   [Built with](#built-with)
     -   [Continued development](#continued-development)
-    -   [Useful resources](#useful-resources)
 -   [Author](#author)
--   [Acknowledgments](#acknowledgments)
+<!-- -   [Acknowledgments](#acknowledgments) -->
 
 ## Overview
 
-### The challenge
-
-<!-- Users should be able to:
-
--   View the optimal layout for the app depending on their device's screen size
--   See hover states for all interactive elements on the page
--   Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
--   Add/Remove bookmarks from all movies and TV series
--   Search for relevant shows on all pages
--   **Bonus**: Build this project as a full-stack application
--   **Bonus**: If you're building a full-stack app, we provide authentication screen (sign-up/login) designs if you'd like to create an auth flow -->
+The Betterlyf Admin Panel is a React-based dashboard where admins manage the platform. It connects to Supabase for database operations and authentication.
 
 ### Screenshot
 
-<!-- ![screenshot](./src/starter-code/entertainment-capture.jpeg) -->
+![screenshot](./betterlyf-admin.jpeg)
 
 ### Links
 
@@ -41,16 +30,32 @@
 -   Solution URL: [GitHub](https://github.com/Samsegun/Entertainment-web-app)
 -   Live Site URL: [Netlify](https://samsegun-entertainment-app.netlify.app/) -->
 
-## My process
+## Features
+
+### Admins
+
+-   Onboard & manage specialists
+-   Oversee bookings & statuses
 
 ### Built with
 
--   Desktop-first workflow
--   [React](https://reactjs.org/) - JS library
+-   Frontend: React Js
+-   Database: Supabase
+-   Auth: Supabase
+-   Remote-State Management: Tanstack Query
+-   Dates Functionality: Date-fns
+-   Charts: Recharts
+-   Styling: styled-components
 
 ### Continued development
+
+#### Upcoming Features:
+
+-   Specialists will be able to edit profiles & manage their bookings
+-   Improved appointment scheduling & notifications
+-   Stripe integration for payments
 
 ## Author
 
 -   Github - [Samuel Oyebade](https://github.com/Samsegun/)
--   Twitter - [@samsegun10](https://www.twitter.com/samsegun10)
+-   X (Twitter) - [@samsegun10](https://www.twitter.com/samsegun10)
