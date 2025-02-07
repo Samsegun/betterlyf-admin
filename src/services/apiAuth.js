@@ -2,6 +2,9 @@ import supabase, { supabaseUrl } from "./supabase";
 import { createClient } from "@supabase/supabase-js";
 
 export async function adminCreateUser({ fullName, email, password }) {
+    // for production purpose, no user except for admin can perform this operation
+    await isNotAdmin();
+
     const serviceRoleSupabase = createClient(
         import.meta.env.VITE_SUPABASE_URL,
         import.meta.env.VITE_SERVICE_ROLE_KEY,
@@ -91,6 +94,14 @@ export async function logout() {
 }
 
 export async function updateCurrentUser({ password, fullName, avatar }) {
+    // for production purpose, no user except for admin can perform this operation
+    await isNotAdmin();
+
+    // const { data: session } = await supabase.auth.getSession();
+    // const sam = session.session.user.email;
+
+    // if (sam === "sam@mail.com") throw new Error("Operation disabled by admin!");
+
     // 1. Update password OR fullName
     let updateData;
     if (password) updateData = { password };
@@ -139,6 +150,11 @@ export async function checkAdminStatus() {
         .single();
 
     return data?.role === "admin";
+}
+
+export async function isNotAdmin() {
+    const isAdmin = await checkAdminStatus();
+    if (!isAdmin) throw new Error("Operation disabled by admin!");
 }
 
 export async function makeUserAdmin(userId) {

@@ -1,5 +1,6 @@
 import { PAGE_SIZE } from "../utils/constants";
 import { getToday } from "../utils/helpers";
+import { isNotAdmin } from "./apiAuth";
 import supabase, { supabaseUrl } from "./supabase";
 
 export async function getSpecialists({ filter, sortBy, page }) {
@@ -35,9 +36,10 @@ export async function getSpecialists({ filter, sortBy, page }) {
 }
 
 export async function createEditSpecialist(newSpecialist, id) {
-    const hasImagePath = newSpecialist.imageUrl?.startsWith?.(supabaseUrl);
+    // for production purpose, no user except for admin can perform this operation
+    await isNotAdmin();
 
-    // console.log(hasImagePath);
+    const hasImagePath = newSpecialist.imageUrl?.startsWith?.(supabaseUrl);
 
     const imageName = `${Math.random()}-${
         newSpecialist.imageUrl.name
@@ -85,6 +87,9 @@ export async function createEditSpecialist(newSpecialist, id) {
 }
 
 export async function deleteSpecialist(id) {
+    // for production purpose, no user except for admin can perform this operation
+    await isNotAdmin();
+
     const { data, error } = await supabase
         .from("specialists")
         .delete()

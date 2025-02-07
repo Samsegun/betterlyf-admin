@@ -12,6 +12,7 @@ export function useSignup() {
                 "Account successfully created! Please verify the new account from the user's email address."
             );
         },
+        onError: err => toast.error(err.message),
     });
 
     return { signup, isLoading };

@@ -2,6 +2,7 @@ import { endOfDay, startOfDay } from "date-fns";
 import { getToday } from "../utils/helpers";
 import supabase from "./supabase";
 import { PAGE_SIZE } from "../utils/constants";
+import { isNotAdmin } from "./apiAuth";
 
 function getTodayRange() {
     const today = new Date();
@@ -95,27 +96,6 @@ export async function getStaysAfterDate(date) {
     return data;
 }
 
-// Activity means that there is a check in or a check out today
-// export async function getStaysTodayActivity() {
-//     const { data, error } = await supabase
-//         .from("bookings")
-//         .select("*, guests(fullName, nationality, countryFlag)")
-//         .or(
-//             `and(status.eq.unconfirmed,startDate.eq.${getToday()}),and(status.eq.checked-in,endDate.eq.${getToday()})`
-//         )
-//         .order("created_at");
-
-//     // Equivalent to this. But by querying this, we only download the data we actually need, otherwise we would need ALL bookings ever created
-//     // (stay.status === 'unconfirmed' && isToday(new Date(stay.startDate))) ||
-//     // (stay.status === 'checked-in' && isToday(new Date(stay.endDate)))
-
-//     if (error) {
-//         console.error(error);
-//         throw new Error("Bookings could not get loaded");
-//     }
-//     return data;
-// }
-
 // Activity means that there is a booking today
 export async function getTodaysActivity() {
     const { start, end } = getTodayRange();
@@ -138,6 +118,9 @@ export async function getTodaysActivity() {
 }
 
 export async function updateBooking(id, obj) {
+    // for production purpose, no user except for admin can perform this operation
+    await isNotAdmin();
+
     const { data, error } = await supabase
         .from("bookings")
         .update(obj)
@@ -153,6 +136,9 @@ export async function updateBooking(id, obj) {
 }
 
 export async function deleteBooking(id) {
+    // for production purpose, no user except for admin can perform this operation
+    await isNotAdmin();
+
     // REMEMBER RLS POLICIES
     const { data, error } = await supabase
         .from("bookings")

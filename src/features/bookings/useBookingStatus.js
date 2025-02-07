@@ -17,8 +17,7 @@ export function useBookingStatus() {
                 queryClient.invalidateQueries({ active: true });
             },
 
-            onError: () =>
-                toast.error("There was an error while updating staus"),
+            onError: err => toast.error(err.message),
         });
 
     return { changeBookingStatus, isChangingBookingStatus };
